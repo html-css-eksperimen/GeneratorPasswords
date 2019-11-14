@@ -4,6 +4,8 @@ import './registerServiceWorker';
 import router from './router';
 import store from './store';
 
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 Vue.config.productionTip = false;
 
 new Vue({

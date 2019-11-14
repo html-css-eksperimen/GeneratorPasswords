@@ -3,15 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --port=4200",
     "build": "vue-cli-service build",
+    "buildmodern": "vue-cli-service build --modern",
+    "buildmoderncss": "vue-cli-service build --modern && npm run purgecss",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lintfix": "vue-cli-service lint --fix",
+    "postbuildcss": "npm run purgecss",
+    "purgecss": "node_modules/purgecss/bin/purgecss --config ./purgecss.config.js --out ./dist/css",
+    "static-serve": "cd dist && live-server --port=4200 --host=localhost --entry-file=/index.html"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2",
     "core-js": "^3.3.2",
     "register-service-worker": "^1.6.2",
+    "sweetalert2": "^9.3.5",
     "vue": "^2.6.10",
     "vue-router": "^3.1.3",
     "vuex": "^3.0.1"
@@ -29,10 +37,15 @@
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-eslint": "^10.0.3",
     "chai": "^4.1.2",
+    "compression-webpack-plugin": "^3.0.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "live-server": "^1.2.1",
+    "purgecss": "^1.4.1",
     "sass": "^1.19.0",
     "sass-loader": "^8.0.0",
+    "script-ext-html-webpack-plugin": "^2.1.4",
     "vue-template-compiler": "^2.6.10"
   }
 }

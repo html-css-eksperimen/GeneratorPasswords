@@ -1,20 +1,20 @@
 {
     "name": "Password Generator",
-    "short_name": "PasswordGenerator",
+    "short_name": "Password Generator",
     "icons": [
         {
-            "src": "/img/ic_launcher_passgenerator.png",
+            "src": "/img/icons/ic_launcher_passgenerator.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/img/ic_launcher_passgenerator.png",
+            "src": "/img/icons/ic_launcher_passgenerator.png",
             "sizes": "512x512",
             "type": "image/png"
         }
     ],
     "start_url": "/index.html",
     "display": "standalone",
-    "background_color": "#000000",
+    "background_color": "#048998",
     "theme_color": "#048998"
 }

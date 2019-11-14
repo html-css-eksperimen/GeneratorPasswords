@@ -2,6 +2,9 @@ const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/generator-password-sandi/'
+    : '/',
   productionSourceMap: false,
   integrity: true,
   crossorigin: 'anonymous',

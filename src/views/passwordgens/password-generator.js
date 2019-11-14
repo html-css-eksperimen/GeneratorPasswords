@@ -85,23 +85,33 @@ export default {
       resultEl.innerText = this.stringHasil;
     },
     salinTempelKataSandi() {
-
+      if (this.stringHasil) {
+        const textArea = document.createElement('textarea');
+        textArea.value = this.stringHasil;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        textArea.remove();
+        this.showDialogPeringatanSukses('Kata sandi berhasil disalin');
+      }
     },
     showDialogPeringatanSukses(stringpesan) {
       Swal.fire({
-        type: 'success',
+        icon: 'success',
         title: 'Berhasil',
         text: stringpesan,
         showConfirmButton: false,
+        allowOutsideClick: false,
         timer: 1500,
       });
     },
     showDialogPeringatanGagal(stringpesan) {
       Swal.fire({
-        type: 'error',
+        icon: 'error',
         title: 'Gagal',
         text: stringpesan,
         showConfirmButton: true,
+        allowOutsideClick: false,
         timer: 5000,
       });
     },

@@ -1,7 +1,8 @@
 {
     "name": "Password Generator",
     "short_name": "PasswordGenerator",
-    "icons": [{
+    "icons": [
+        {
             "src": "/img/ic_launcher_passgenerator.png",
             "sizes": "192x192",
             "type": "image/png"

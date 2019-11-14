@@ -8,6 +8,12 @@ Aplikasi sederhana untuk membuat kata sandi atau password dengan kriteria terten
 
 Aplikasi ini dibuat dengan Vue CLI 3 dan Vue JS 2, Webpack, dan Node JS.
 
+Aplikasi ini bersumberkan dari [100 DAYS - 100 PROJECTS CHALLENGE](https://www.florin-pop.com/blog/2019/09/100-days-100-projects/) yang dibuat oleh Florin Pop.
+
+Kode sumber asli bisa dilihat di [Codepen](https://codepen.io/FlorinPop17/pen/BaBePej).
+
+---
+
 ## Project setup
 
 ```

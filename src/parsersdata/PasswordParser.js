@@ -21,6 +21,7 @@ export default function generatePassword(lower, upper, number, symbol, length) {
   // buat loop untuk menyusun kata sandi password
   for (let i = 0; i < length; i += typesCount) {
     const panjangArrayTypes = typesArr.length;
+
     for (let j = 0; j < panjangArrayTypes; j += 1) {
       const typeItem = typesArr[j];
       const funcName = Object.keys(typeItem)[0];

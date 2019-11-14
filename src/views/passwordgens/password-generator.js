@@ -7,11 +7,20 @@ export default {
   data() {
     return {
       stringHasil: '',
-      stringPanjangPass: '',
-      statusUppercase: '',
-      statusLowerCase: '',
-      statusNumber: '',
-      statusSimbol: '',
+      stringPanjangPass: '20',
+      numberPanjangPass: 20,
+      statusCheckbox: {
+        stringStatusUppercase: '1',
+        stringStatusLowerCase: '1',
+        stringStatusNumber: '1',
+        stringStatusSimbol: '1',
+      },
+      valueStatusCheckbox: {
+        numberStatusUppercase: 1,
+        numberStatusLowercase: 1,
+        numberStatusNumber: 1,
+        numberStatusSimbol: 1,
+      },
     };
   },
   methods: {
@@ -20,9 +29,33 @@ export default {
     },
     cekIsianPanjangPassword() {
       if (this.stringPanjangPass) {
-        const jumlahPass = Number(this.stringPanjangPass);
-        if (jumlahPass >= 5) {
-          this.kalkulasiPassword();
+        this.numberPanjangPass = Number(this.stringPanjangPass);
+
+        if (this.numberPanjangPass >= 5) {
+          this.valueStatusCheckbox.numberStatusUppercase = Number(
+            this.statusCheckbox.stringStatusUppercase,
+          );
+
+          this.valueStatusCheckbox.numberStatusLowercase = Number(
+            this.statusCheckbox.stringStatusLowerCase,
+          );
+
+          this.valueStatusCheckbox.numberStatusNumber = Number(
+            this.statusCheckbox.stringStatusNumber,
+          );
+
+          this.valueStatusCheckbox.numberStatusSimbol = Number(
+            this.statusCheckbox.stringStatusSimbol,
+          );
+
+          const jumlahPilihan = this.valueStatusCheckbox.numberStatusUppercase
+            + this.valueStatusCheckbox.numberStatusLowercase
+            + this.valueStatusCheckbox.numberStatusNumber
+            + this.valueStatusCheckbox.numberStatusSimbol;
+
+          if (jumlahPilihan > 0) {
+            this.kalkulasiPassword();
+          }
         } else {
           this.showDialogPeringatanGagal('Masukkan panjang kata sandi dengan benar');
         }
@@ -32,16 +65,24 @@ export default {
     },
     async kalkulasiPassword() {
       const hasilPassword = await new Promise((resolve) => {
-        const password = generatePassword(this.statusLowerCase, this.statusUppercase,
-          this.statusLowerCase, this.statusSimbol, this.stringPanjangPass);
-        resolve(password);
+        const passwords = generatePassword(this.valueStatusCheckbox.numberStatusLowercase,
+          this.valueStatusCheckbox.numberStatusUppercase,
+          this.valueStatusCheckbox.numberStatusNumber,
+          this.valueStatusCheckbox.numberStatusSimbol,
+          this.numberPanjangPass);
+        resolve(passwords);
       }).catch((err) => {
         loggerConsoleLog(err);
       });
 
       if (hasilPassword && hasilPassword.length >= 5) {
         this.stringHasil = hasilPassword;
+        this.setHasilPassword();
       }
+    },
+    setHasilPassword() {
+      const resultEl = document.getElementById('result');
+      resultEl.innerText = this.stringHasil;
     },
     salinTempelKataSandi() {
 

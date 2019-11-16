@@ -4,7 +4,7 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-Aplikasi sederhana untuk membuat kata sandi atau password dengan kriteria tertentu. Seperti panjang password, ada atau tidaknya huruf besar (uppercase), ada atau tidaknya huruf kecil (lowercase), ada atau tidaknya angka, dan ada atau tidaknya simbol.
+Aplikasi sederhana untuk membuat kata sandi atau password dengan kriteria tertentu. Seperti panjang password, ada atau tidaknya huruf besar (uppercase), ada atau tidaknya huruf kecil (lowercase), ada atau tidaknya angka, dan ada atau tidaknya simbol. Demo aplikasi ini dapat dilihat di [Password Generator Github Pages](https://html-css-eksperimen.github.io/generator-password-sandi/)
 
 Aplikasi ini dibuat dengan Vue CLI 3 dan Vue JS 2, Webpack, dan Node JS.
 
